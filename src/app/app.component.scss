@@ -1,0 +1,30 @@
+.head__style {
+  padding: 10px;
+}
+
+.lbe {
+  display: block;
+}
+
+.grid__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr); // tablets
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr; // mobile
+  }
+}
+.row {
+  text-align: center;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.tooltip__btn {
+  position: relative;
+}

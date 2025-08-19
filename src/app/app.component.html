@@ -1,0 +1,77 @@
+<h4>Highlight text when hover over the text USING HOSTLISTENER</h4>
+<h5 appHoverText class="head__style">
+  Highlight text when hover over the text
+</h5>
+<hr />
+<h4>Trim white-space in input field on blur event</h4>
+<div>
+  <input type="text" appInputValidation />
+  <article>
+    <p>*check console.</p>
+    <p>filtered value : {{ filtered }}</p>
+    <p>non-filtered value : {{ actual }}</p>
+  </article>
+</div>
+<hr />
+<h4>Custom tool tip directive</h4>
+
+<div class="grid__container">
+  <div class="">
+    <label for="text_tooltip" class="lbe">Tooltip Text</label>
+    <input
+      type="text"
+      name="text_tooltip"
+      id="text_tooltip"
+      [(ngModel)]="text"
+    />
+  </div>
+  <div class="">
+    <label for="position_drop_down" class="lbe">Position Drop-down</label>
+    <select
+      name="position_drop_down"
+      id="position_drop_down"
+      [(ngModel)]="position"
+    >
+      <option selected desable>-- select position --</option>
+      <option value="left">left</option>
+      <option value="right">right</option>
+      <option value="top">top</option>
+      <option value="bottom">bottom</option>
+    </select>
+  </div>
+
+  <div class="">
+    <label for="choose_color" class="lbe">Choose Color</label>
+    <input
+      [(ngModel)]="bgColor"
+      type="color"
+      name="choose_color"
+      id="choose_color"
+    />
+  </div>
+
+  <div class="">
+    <label for="font_size" class="lbe">Position Drop-down</label>
+    <select name="font_size" id="font_size" [(ngModel)]="fontSize">
+      <option selected desable>-- select font size --</option>
+      <option value="12">12</option>
+      <option value="14">14</option>
+      <option value="16">16</option>
+      <option value="20">20</option>
+      <option value="24">24</option>
+      <option value="28">28</option>
+      <option value="36">36</option>
+    </select>
+  </div>
+</div>
+<div class="row">
+  <button
+    class="tooltip__btn"
+    appTooltip="{{ text }}"
+    [tooltipPosition]="position"
+    [tooltipBgColor]="bgColor"
+    [tooltipFontSize]="fontSize + 'px'"
+  >
+    hover me
+  </button>
+</div>
